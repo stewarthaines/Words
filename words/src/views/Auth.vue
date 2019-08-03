@@ -8,9 +8,7 @@
 export default {
   name: 'Auth',
   mounted () {
-    console.log('Auth.mounted()')
     let params = new URLSearchParams(this.$route.hash.substr(1))
-    console.log(params.get('access_token'))
     this.$store.commit('storeDropboxAccessToken', params.get('access_token'))
     this.$router.push('/')
   }
