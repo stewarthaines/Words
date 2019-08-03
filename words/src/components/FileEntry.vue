@@ -34,16 +34,16 @@ a {
   width: 100%;
 }
 a.disclosure::before {
-	transform: rotate(45deg);
-	content: " ";
-	display: inline-block;
-	width: 6px;
-	height: 6px;
-	float: right;
+  transform: rotate(45deg);
+  content: " ";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  float: right;
   margin-top: 25px;
   margin-right: 25px;
-	border: 3px solid #7f7f7f;
-	border-bottom: none;
-	border-left: none;
+  border: 3px solid #7f7f7f;
+  border-bottom: none;
+  border-left: none;
 }
 </style>

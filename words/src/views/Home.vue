@@ -47,7 +47,7 @@ export default {
   <div class="home">
     <a v-if="!accessToken" @click="auth">authorize dropbox</a>
     <ul>
-      <FileEntry v-for="(file, index) in files" :key="index":path="file.path" :name="file.name" />
+      <FileEntry v-for="(file, index) in files" :key="index" :path="file.path" :name="file.name" />
     </ul>
   </div>
 </template>
