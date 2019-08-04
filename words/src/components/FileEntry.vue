@@ -32,6 +32,7 @@ a {
   text-decoration: none;
   height: 100%;
   width: 100%;
+  color: #555;
 }
 a.disclosure::before {
   transform: rotate(45deg);

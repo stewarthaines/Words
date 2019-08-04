@@ -31,7 +31,7 @@ export default {
       let vm = this
       dbx.filesListFolder({ path: '' })
         .then(function (response) {
-          vm.$store.commit('files', response.entries.map(item => { return { name: item.name, path: decodeURIComponent(item.path_display) } }))
+          vm.$store.commit('files', response.entries.map(item => { return { name: item.name.replace(/\.[^/.]+$/, ''), path: decodeURIComponent(item.path_display) } }))
         })
         .catch(function (error) {
           console.error(error)
@@ -45,6 +45,9 @@ export default {
 
 <template>
   <div class="home">
+    <div id="nav">
+      <router-link to="/">Texti</router-link>
+    </div>
     <a v-if="!accessToken" @click="auth">authorize dropbox</a>
     <ul>
       <FileEntry v-for="(file, index) in files" :key="index" :path="file.path" :name="file.name" />
@@ -53,9 +56,13 @@ export default {
 </template>
 
 <style scoped lang="scss">
+.home {
+  margin-top: 60px;
+}
 ul {
   // -webkit-overflow-scrolling: touch;
   // overflow-y: auto;
+  margin: 0;
   padding: 0;
   text-align: left;
   list-style: none;
